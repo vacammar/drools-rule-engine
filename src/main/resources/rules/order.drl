@@ -1,0 +1,26 @@
+import it.vacammar.droolsruleengine.dto.OrderDTO;
+
+global it.vacammar.droolsruleengine.dto.RuleResultDTO result;
+
+dialect "mvel"
+
+rule "Negative Amount"
+   when
+    OrderDTO(amount < 0)
+   then
+    result.setStatus("Quantity available!");
+end
+
+rule "Magazine availability > 10"
+ when
+  OrderDTO(amount > 10)
+ then
+  result.setStatus("Quantity not available!");
+end
+
+rule "Magazine availability <= 10"
+   when
+    OrderDTO(amount <= 10)
+   then
+    result.setStatus("Quantity available!");
+end

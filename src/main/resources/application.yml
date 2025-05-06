@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: "drools-rule-engine"
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order_db
+    username: root
+    password: <YOUR-PWD>
+  data:
+    jdbc:
+      dialect: mysql
+server:
+  servlet:
+    context-path: "/api/v1"
+  port: 8080
